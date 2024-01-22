@@ -1,0 +1,25 @@
+# CreateLocationBody
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**ApiLogin** | **string** | Web service username, as provided by Galileo. Pattern: Max 50 characters Example: &#x60;\&quot;AbC123-9999\&quot;&#x60; | [default to AbC123-9999]
+**ApiTransKey** | **string** | Web service password, as provided by Galileo. Pattern: Max 15 characters Example: &#x60;\&quot;4sb62fh6w4h7w34g\&quot;&#x60; | [default to 4sb62fh6w4h7w34g]
+**ProviderId** | **int32** | Galileo-issued provider identifier. Pattern: Max 10 digits Example: &#x60;9999&#x60; | [default to 9999]
+**TransactionId** | **string** | A unique provider-generated ID to identify this API call. A UUID is preferred. This value is used for &lt;a href&#x3D;\&quot;ref:idempotency\&quot; target&#x3D;\&quot;_blank\&quot;&gt;idempotency&lt;/a&gt;. Pattern: 60 characters or less Example: &#x60;\&quot;9845dk-39fdk3fj3-4483483478\&quot;&#x60; | [default to 123e4567-e89b-12d3-a456-426614174000]
+**Name** | **string** | The name of the location. Pattern: Max 85 characters: letters, numbers, spaces, &#x60;_&#x60; (underscore), &#x60;&#x27;&#x60; (single quote), &#x60;-&#x60; (hyphen), &#x60;.&#x60; (period). All other characters will be removed. Example: &#x60;\&quot;ABC Store 5\&quot;&#x60; | [default to ABC Store 5]
+**Address1** | **string** | First address line of the location. Pattern: 4&amp;ndash;40 alphanumeric characters Example: &#x60;\&quot;33 Maple Street\&quot;&#x60; | [default to 33 Maple Street]
+**Address2** | **string** | Second address line of the location. Pattern: Max 30 alphanumeric characters Example: &#x60;\&quot;#4B\&quot;&#x60; | [optional] [default to null]
+**City** | **string** | City for the location. Pattern: Max 30 characters: letters, spaces, hyphen and period Example: &#x60;\&quot;Salt Lake City\&quot;&#x60; | [default to Salt Lake City]
+**State** | **string** | State or province for the location. Pattern: 2-character state or province abbreviation Example: &#x60;\&quot;UT\&quot;&#x60; | [default to UT]
+**PostalCode** | **string** | Postal (ZIP) code for the location. Pattern: &#x60;12345&#x60;, &#x60;12345-1234&#x60;, &#x60;K1A-1A1&#x60; Example: &#x60;\&quot;84121\&quot;&#x60; | [default to 84121]
+**CountryCode** | **string** | TCountry for the location. Three-digit UN M49 code, such as &#x60;840&#x60; for USA, &#x60;124&#x60; for Canada, &#x60;484&#x60; for Mexico, &#x60;170&#x60; for Colombia. Pattern: Three-digit country code Example: &#x60;\&quot;840\&quot;&#x60; | [optional] [default to null]
+**Phone** | **string** | Phone number of the location. Pattern: Exactly 10 digits, no hyphens or other characters Example: &#x60;\&quot;8013656060\&quot;&#x60; | [optional] [default to null]
+**ParentLocation** | **string** | Identifier for the parent location. The first time you create a location, pass &#x60;0&#x60;. Pattern: Integer if &#x60;parentLocationType: 0&#x60;; max 15 characters if &#x60;parentLocationType: 1&#x60; Example: &#x60;\&quot;5\&quot;&#x60; | [default to 5]
+**ParentLocationType** | **int32** | The type of location specified in &#x60;parentLocation&#x60;. If &#x60;parentLocation&#x60; is the top-level value from Galileo, then pass &#x60;0&#x60; for this parameter. * &#x60;0&#x60; &amp;mdash; Galileo location ID * &#x60;1&#x60; &amp;mdash; Partner location ID * &#x60;2&#x60; &amp;mdash; Don&#x27;t validate  Pattern: &#x60;0&#x60;, &#x60;1&#x60; or &#x60;2&#x60; Example: &#x60;0&#x60; | [default to null]
+**ProviderSpecifiedId** | **string** | The provider-supplied identifier for a location, when &#x60;parentLocationType: 1&#x60;. Pattern: Max 15 alphanumeric characters Example: &#x60;\&quot;abc-123\&quot;&#x60; | [optional] [default to null]
+**Status** | **string** | Location status. Default &#x60;N&#x60;: * &#x60;C&#x60; &amp;mdash; Closed * &#x60;N&#x60; &amp;mdash; Active * &#x60;S&#x60; &amp;mdash; Suspended * &#x60;n&#x60; &amp;mdash; New  Pattern: Single character, case-sensitive Example: &#x60;\&quot;N\&quot;&#x60; | [optional] [default to null]
+**StoreType** | **string** | The store or location type. Default &#x60;5&#x60;: * &#x60;1&#x60; &amp;mdash; Corporate * &#x60;2&#x60; &amp;mdash; Chain * &#x60;3&#x60; &amp;mdash; Reseller * &#x60;4&#x60; &amp;mdash; Region * &#x60;5&#x60; &amp;mdash; Store  Pattern: Single digit or &#x60;null&#x60; Example: &#x60;\&quot;5\&quot;&#x60; | [optional] [default to STORE_TYPE.NULL]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
